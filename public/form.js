@@ -13,16 +13,14 @@ form.addEventListener("submit", (e) => {
 		document.getElementById("nameError").style.display = "none";
 	}
 	//年齢のバリデーション
+	if (age.value === "") {
+		document.getElementById("ageError").style.display = "none";
+		return;
+	}
 	if (age.value < 18) {
 		document.getElementById("ageError").style.display = "block";
 	} else {
 		document.getElementById("ageError").style.display = "none";
-	}
-	//職業のバリデーション
-	if (occupation.value === "") {
-		document.getElementById("jobError").style.display = "block";
-	} else {
-		document.getElementById("jobError").style.display = "none";
 	}
 	const formData = {
 		name: name.value,
