@@ -9,8 +9,7 @@ body {
   margin: 0;
   background-color: #ffffff;
   align-items: center;
-  min-height: 100vh;
-  /* ←画面の高さいっぱいに中央寄せ */
+  min-height: 100vh;  /* ←画面の高さいっぱいに中央寄せ */
 }
 
 .card {
@@ -59,8 +58,7 @@ body {
   /* 白＋60%透明 */
 }
 
-.tbl td,
-.tbl th {
+.tbl td,{
   border: 1px dotted #000;
   padding: 10px;
   font-size: 20px;
