@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const userList = document.getElementById("userList");
 	const status = document.getElementById("status");
 
-	fetch("https://jsonplaceholder.typicode.com/us")
+	fetch("https://jsonplaceholder.typicode.com/users")
 		.then((res) => {
 			if (!res.ok) {
 				throw new Error("HTTPエラー");
@@ -21,4 +21,5 @@ document.addEventListener("DOMContentLoaded", () => {
 			error.innerText = "データの取得に失敗しました";
 			console.error("通信エラー：", err);
 		});
+	status.textContent = "";
 });
