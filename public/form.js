@@ -6,21 +6,28 @@ form.addEventListener("submit", (e) => {
 	const age = document.getElementById("age");
 	const occupation = document.getElementById("occupation");
 	const bio = document.getElementById("bio");
+	//エラーフラグ
+	let hasError = false;
 	//名前のバリデーション
 	if (name.value === "") {
 		document.getElementById("nameError").style.display = "block";
+		hasError = true;
 	} else {
 		document.getElementById("nameError").style.display = "none";
 	}
 	//年齢のバリデーション
 	if (age.value === "") {
 		document.getElementById("ageError").style.display = "none";
-		return;
-	}
-	if (age.value < 18) {
+		hasError = true;
+	} else if (age.value < 18) {
 		document.getElementById("ageError").style.display = "block";
+		hasError = true;
 	} else {
 		document.getElementById("ageError").style.display = "none";
+	}
+	//エラーがあれば表示
+	if (hasError) {
+		return;
 	}
 	const formData = {
 		name: name.value,
