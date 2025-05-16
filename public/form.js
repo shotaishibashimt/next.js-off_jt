@@ -6,9 +6,10 @@ form.addEventListener("submit", (e) => {
 	const age = document.getElementById("age");
 	const occupation = document.getElementById("occupation");
 	const bio = document.getElementById("bio");
-	//エラーフラグ
-	let hasError = false;
+
 	try {
+		//エラーフラグ
+		let hasError = false;
 		//名前のバリデーション
 		if (name.value === "") {
 			document.getElementById("nameError").style.display = "block";
@@ -26,9 +27,8 @@ form.addEventListener("submit", (e) => {
 		} else {
 			document.getElementById("ageError").style.display = "none";
 		}
-		//エラーがあれば表示
 		if (hasError) {
-			return;
+			throw new ValidationError();
 		}
 		const formData = {
 			name: name.value,
@@ -41,6 +41,5 @@ form.addEventListener("submit", (e) => {
 	} catch (error) {
 		//エラーが発生した場合の処理
 		console.error("エラーが発生しました");
-		alert(エラーが発生しました);
 	}
 });
