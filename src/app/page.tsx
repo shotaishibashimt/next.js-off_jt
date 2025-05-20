@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+export const metadata: Metadata = {
+	title: "一覧ページ",
+};
+
 export default function TopPage() {
 	return (
 		<main>
