@@ -1,4 +1,4 @@
-"use user";
+"use client";
 
 import MyForm from "../components/Form";
 

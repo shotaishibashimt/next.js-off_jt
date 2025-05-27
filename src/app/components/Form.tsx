@@ -19,20 +19,22 @@ function MyForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
+      <div className="flex flex-col">
         <label htmlFor="name">名前</label>
         <input
           id="name"
+          className="border-2"
           {...register("name", { required: "名前は必須です" })}
-          placeholder="名前"
+          placeholder="名前を入力"
         />
-        {errors.name && <p>{errors.name.message}</p>}
+        {errors.name && <p className="text-red-500">{errors.name.message}</p>}
       </div>
 
-      <div>
+      <div className="flex flex-col">
         <label htmlFor="email">メールアドレス</label>
         <input
           id="email"
+          className="border-2"
           type="email"
           {...register("email", {
             required: "メールアドレスは必須です",
@@ -41,16 +43,17 @@ function MyForm() {
               message: "無効なメールアドレス形式です",
             },
           })}
-          placeholder="メールアドレス"
+          placeholder="メールアドレスを入力"
         />
-        {errors.email && <p>{errors.email.message}</p>}
+        {errors.email && <p className="text-red-500">{errors.email.message}</p>}
       </div>
 
-      <div>
+      <div className="flex flex-col">
         <label htmlFor="age">年齢</label>
         <input
           id="age"
           type="number"
+          className="border-2"
           {...register("age", {
             required: "年齢は必須です",
             valueAsNumber: true,
@@ -63,11 +66,11 @@ function MyForm() {
               message: "100歳以下で入力してください",
             },
             validate: (value) =>
-              Number.isNaN(value) || "数値で入力してください",
+              !Number.isNaN(value) || "数値で入力してください",
           })}
-          placeholder="年齢"
+          placeholder="年齢を入力"
         />
-        {errors.age && <p>{errors.age.message}</p>}
+        {errors.age && <p className="text-red-500">{errors.age.message}</p>}
       </div>
 
       <button type="submit">送信</button>
