@@ -13,7 +13,7 @@ const memos = [
   { id: 5, name: "ウンチェ" },
 ];
 
-export default function MemoList() {
+export default function ListPage() {
   return (
     <main>
       <h1>グループ名：ルセラフィム</h1>

@@ -10,13 +10,11 @@ export default function TopPage() {
   const today = new Date().toLocaleDateString();
 
   return (
-    <div>
+    <div className="flex flex-col">
       <h1>こんにちは！</h1>
       <p>今日は{today}です。</p>
       <LikeButton />
-      <div>
-        <Link href="/memos">一覧ページへ</Link>
-      </div>
+      <Link href="/memos">一覧ページへ</Link>
     </div>
   );
 }

@@ -45,17 +45,15 @@ export default async function ItemDetailPage({
   const item = await getItemDetails(id);
 
   if (!item) {
-    return <div>アイテムが見つかりません。</div>;
+    return <p>アイテムが見つかりません。</p>;
   }
 
   return (
-    <div>
+    <div className="flex flex-col">
       <h1>{item.name}</h1>
       <p>{item.description}</p>
       <Link href="/memos">一覧へ戻る</Link>
-      <div>
-        <Link href="/">トップページへ</Link>
-      </div>
+      <Link href="/">トップページへ</Link>
     </div>
   );
 }
