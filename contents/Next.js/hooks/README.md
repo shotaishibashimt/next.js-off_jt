@@ -73,5 +73,5 @@ useEffect(() => {
 ## ✅ 実装条件
 
 - 2つの課題をそれぞれ `components/Counter.tsx`, `components/Clock.tsx` に分けて作成
-- `pages/index.tsx` から呼び出して並べて表示
+- `page.tsx` から呼び出して並べて表示
 - TypeScript で型注釈を明示する
