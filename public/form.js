@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 		}
 	});
+
 	// 各入力フィールドの変更時にエラーメッセージを非表示にする
 	const inputs = document.querySelectorAll("#userForm input");
 	for (const input of inputs) {
