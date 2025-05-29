@@ -55,6 +55,16 @@ document.addEventListener("DOMContentLoaded", () => {
 					errorElement.style.display = "block";
 				}
 			}
+			// 5秒後にエラーメッセージを非表示にする
+			setTimeout(() => {
+				for (const msg of errorMessages) {
+					const [id] = msg.split(": ");
+					const errorElement = document.getElementById(`${id}Error`);
+					if (errorElement) {
+						errorElement.style.display = "none";
+					}
+				}
+			}, 5000);
 		}
 	});
 
