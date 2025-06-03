@@ -20,6 +20,7 @@ const NewForm = () => {
   });
 
   const onSubmit = (data: FormData) => {
+    alert("正常に送信されました");
     console.log("送信されたデータ:", data);
   };
 
