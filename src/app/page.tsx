@@ -1,20 +1,16 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { LikeButton } from "./components/LikeButton";
+import Clock from "./components/Clock";
+import Counter from "./components/Counter";
 
 export const metadata: Metadata = {
-  title: "トップページ",
+  title: "カウントアプリと時刻表示",
 };
 
-export default function TopPage() {
-  const today = new Date().toLocaleDateString();
-
+export default function CountPage() {
   return (
-    <div className="flex flex-col">
-      <h1>こんにちは！</h1>
-      <p>今日は{today}です。</p>
-      <LikeButton />
-      <Link href="/memos">一覧ページへ</Link>
-    </div>
+    <main>
+      <Counter />
+      <Clock />
+    </main>
   );
 }
