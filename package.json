@@ -19,8 +19,8 @@
 		"lucide-react": "^0.483.0",
 		"next": "15.2.3",
 		"react": "^19.0.0",
-
-		"react-hook-form": "^7.56.3"
+		"react-hook-form": "^7.56.3",
+		"swr": "^2.3.3"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
@@ -46,6 +46,10 @@
 		"vitest": "^3.0.9"
 	},
 	"pnpm": {
-		"ignoredBuiltDependencies": ["@biomejs/biome", "esbuild", "sharp"]
+		"ignoredBuiltDependencies": [
+			"@biomejs/biome",
+			"esbuild",
+			"sharp"
+		]
 	}
 }

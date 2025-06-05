@@ -1,31 +1,22 @@
-import type { Metadata } from "next";
-import Link from "next/link";
+"use client";
+import useSWR from "swr";
 
-export const metadata: Metadata = {
-  title: "一覧ページ",
+type Memo = {
+  id: number;
+  title: string;
 };
 
-const memos = [
-  { id: 1, name: "チェオン" },
-  { id: 2, name: "サクラ" },
-  { id: 3, name: "ユンジン" },
-  { id: 4, name: "カズハ" },
-  { id: 5, name: "ウンチェ" },
-];
+export default function MemoPage() {
+  const fetcher = (url: string) => fetch(url).then((res) => res.json());
+  const { data, error, isLoading } = useSWR("/api/memos", fetcher);
+  if (isLoading) return <p>読み込み中...</p>;
+  if (error) return <p>エラーが発生しました</p>;
 
-export default function ListPage() {
   return (
-    <main>
-      <h1>グループ名：ルセラフィム</h1>
-      <h2>↓メンバー↓</h2>
-      <ul>
-        {memos.map((memo) => (
-          <li key={memo.id}>
-            <Link href={`/memos/${memo.id}`}>{memo.name}</Link>
-          </li>
-        ))}
-      </ul>
-      <Link href="/">トップページへ</Link>
-    </main>
+    <ul>
+      {data.map((memo: Memo) => (
+        <li key={memo.id}>{memo.title}</li>
+      ))}
+    </ul>
   );
 }
