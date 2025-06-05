@@ -3,6 +3,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
+type FormData = {
+  title: string;
+  content: string;
+};
+
 const schema = z.object({
   title: z.string().min(1, "タイトルは必須です"),
   content: z.string().min(10, "10文字以上で入力してください"),
@@ -22,11 +27,6 @@ const NewForm = () => {
   const onSubmit = (data: FormData) => {
     alert("正常に送信されました");
     console.log("送信されたデータ:", data);
-  };
-
-  type FormData = {
-    title: string;
-    content: string;
   };
 
   return (
