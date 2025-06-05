@@ -5,11 +5,11 @@ const Clock = () => {
   const [now, setNow] = useState<Date>(new Date());
 
   useEffect(() => {
-    const Timer = setInterval(() => {
+    const timer = setInterval(() => {
       setNow(new Date());
     }, 1000);
 
-    return () => clearInterval(Timer);
+    return () => clearInterval(timer);
   }, []);
   return <div>{now.toLocaleTimeString()}</div>;
 };
