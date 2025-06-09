@@ -73,30 +73,36 @@ const Form: React.FC = () => {
         <div className="border p-3 mb-4 rounded">
           タイトル：
           <input {...register("title")} placeholder="タイトルを入力" />
-          {errors.title && <p>{errors.title.message}</p>}
+          {errors.title && (
+            <p style={{ color: "red" }}>{errors.title.message}</p>
+          )}
         </div>
         <div className="border p-3 mb-4 rounded">
           本文：
           <input {...register("text")} placeholder="本文を入力" />
-          {errors.text && <p>{errors.text.message}</p>}
+          {errors.text && <p style={{ color: "red" }}>{errors.text.message}</p>}
         </div>
 
         <div className="border p-3 mb-4 rounded">
           email：
           <input {...register("email")} placeholder="メールアドレスを入力" />
-          {errors.email && <p>{errors.email.message}</p>}
+          {errors.email && (
+            <p style={{ color: "red" }}>{errors.email.message}</p>
+          )}
         </div>
 
         <div className="border p-3 mb-4 rounded">
           年齢：
           <input {...register("age")} placeholder="年齢を入力" />
-          {errors.age && <p>{errors.age.message}</p>}
+          {errors.age && <p style={{ color: "red" }}>{errors.age.message}</p>}
         </div>
 
         <div className="border p-3 mb-4 rounded">
           <input type="checkbox" {...register("agree")} />
           利用規約に同意する
-          {errors.agree && <p>{errors.agree.message}</p>}
+          {errors.agree && (
+            <p style={{ color: "red" }}>{errors.agree.message}</p>
+          )}
         </div>
 
         <button type="submit" disabled={isLoading}>
